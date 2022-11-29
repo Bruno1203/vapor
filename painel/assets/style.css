@@ -1,0 +1,491 @@
+.espacamento{
+    margin-top: 50px;
+}
+
+.hidden{
+    display: none;
+}
+
+/* START TOP MENU */
+#top{
+    width: 100%;
+    height: 50px;   
+    background-color: #FFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#top #user{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    color: #868A92;
+    padding: 0 10px;
+    align-items: center;
+    font-weight: bold;
+}
+
+#top #user #login-user{
+    width: 52px;
+    height: auto;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+#top #user p{
+    margin: 0 5px;
+}
+
+#top #user #logout{
+    margin: 0 5px;
+    text-decoration: none;
+    color: #868A92;
+    transition: 200ms all;  
+}
+
+#top #user #logout:hover{   
+    color: #000;
+}
+
+#top #user .user-assets{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#top #user .user-assets #new_message{
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    border: 1px #000 solid;
+    color: #fff;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #000;
+    right: 5px;
+    bottom: 5px;
+}
+
+#top #user .user-assets img{
+    width: 30px;
+    height: auto;
+}
+
+#top #user .user-assets img:hover{
+    cursor: pointer;
+}
+
+#top #title{
+    height: 50px;
+    padding: 0 10px;
+    color: #868A92;
+    font-weight: bold;
+}
+/* END TOP MENU */
+
+/* START SIDE MENU */
+#side-menu #logo{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 5px 2px;
+    margin: 10px 0;
+}
+
+#side-menu #logo img{
+    width: 72px;
+    height: auto;
+}
+
+#side-menu .item{
+    width: 100%;
+    height: 60px;
+    padding: 5%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 1px #868A92 solid;
+    border-top: 1px #868A92 solid;
+}
+
+#side-menu .item img{
+    width: 50px;
+    height: auto;
+    padding: 5px;
+}
+
+#side-menu .item a{
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+    transition: 200ms all;
+    margin-left: 5px;
+}
+
+#side-menu .item a:hover{
+    color: #3598DC;
+}
+
+/* SCREEN LOGIN REGION */
+#cont-login{
+    background-color: #1B2839;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 10% 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#login_screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 400px;
+    height: auto;
+}
+
+#login_screen #img_login{
+    width: 100px;
+    height: auto;
+    margin: 20px 0;
+}
+
+#login_screen .campo_login{
+    display: flex;
+    flex-direction: row;
+    width: 96%;
+    height: 50px;
+    justify-content: center;
+    margin: 10px;
+}
+
+#login_screen .campo_login .img_login{
+    width: 52px;
+    height: auto;
+}
+
+#login_screen .campo_login .input_login{
+    width: 80%;
+    margin: 0 2%;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+}
+
+#login_screen #button_login {
+    width: 90%;
+    height: 50px;
+    margin: 10px 0;
+    background-color: #000;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    transition: 200ms;
+}
+
+#login_screen #button_login:hover {
+    background-color: #3598DC;
+    cursor: pointer;
+}
+
+#login_screen #error_message{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 0 5px;
+    align-items: center;
+    background-color: #FF6961;
+    border-radius: 5px;
+    color: #581d22;
+    font-weight: bold;
+}
+/* END SCREEN LOGIN */
+
+/* START DASHBOARD */
+#cont-dashboard{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#side-menu{
+    width: 10%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1B2839;
+}
+
+#sub-dashboard{
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f7fb;
+}
+
+
+/* START IDIOMA PAGE */
+.add-button{
+    width: 100%;
+    height: 50px;
+    margin: 20px 0 5px;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.add-button a{
+    display: flex;
+    width: 150px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.listas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.listas table{
+    width: 90%;
+    height: auto;
+    border: #000 1px solid
+}
+
+.listas h2{
+    width: 90%;
+    padding: 0 20px;
+}
+
+.listas table th{
+    background-color: black;
+    font-weight: bold;
+    color: #FFF;
+    width: 50%;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.listas table .actions{
+    width: 10%;
+    text-align: center;
+}
+
+.listas table .actions a img{
+    width: 22px;
+    height: auto;
+}
+
+.listas table td{
+    width: 50%;
+    height: 30px;
+    padding: 0 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: #000 1px solid;
+}
+
+/* START FORMS */
+
+.forms {
+    display: flex;
+    width: 99%;
+    height: auto;
+    margin-left: 1%;
+    margin-top: 20px;
+}
+
+.forms form{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.forms form .info{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    height: auto;
+}
+
+.forms form label{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.forms form input{
+    border: #000 1px solid;
+    outline: none;
+    width: 220px;
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: #FFF;
+    border-radius: 5px;
+}
+
+.forms form select{
+    border: #000 1px solid;
+    outline: none;
+    width: 220px;
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: #FFF;
+    border-radius: 5px;
+}
+
+.forms form textarea{
+    border: #000 1px solid;
+    outline: none;
+    width: 500px;
+    height: 100px;
+    margin-bottom: 10px;
+    background-color: #FFF;
+    border-radius: 5px;
+    resize: none;
+}
+
+.error {
+    display: flex;
+    width: 48%;
+    height: 30px;
+    align-items: center;
+    margin: 10px;
+    background-color: #FF6961;
+    color: #581d22;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+.sucess {
+    display: flex;
+    width: 48%;
+    height: 30px;
+    align-items: center;
+    margin: 10px;
+    background-color: #20c997;
+    color: #0f5132;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+.sucess_cadastro {
+    display: flex;
+    width: 90%;
+    height: 30px;
+    align-items: center;
+    margin: 10px;
+    background-color: #20c997;
+    color: #0f5132;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+.forms form button{
+    width: 100px;
+    height: 30px;
+    color: #FFF;
+    font-weight: bold;
+    border: none;
+    background-color: #000;
+    border-radius: 5px;
+    transition: 200ms all;
+}
+
+.forms form button:hover{
+    background-color: #3598DC;
+    cursor: pointer;
+}
+
+/* style visualizar mensagens */
+#message-info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+    overflow: scroll;
+}
+
+#message-info h2{
+    align-self: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+#header-message{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #000;
+}
+
+.user-info{
+    color: #000;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 7.5px 10px;
+}
+
+#message-cont{
+    width: 100%;
+    height: auto;  
+    border-top: 1px solid #000;
+
+    font-size: 18px;
+    padding: 20px 30px;
+    text-align: justify;
+}
+
+.listas .nao_visualizado{
+    color: #3598DC;
+    background-color: #E3E3E3;
+}
+
+.listas table tr td a{
+    text-decoration: none;
+    color: #000;
+    transition: 200ms;
+}
+
+.listas table tr td a:hover{
+    color: #3598DC;
+}
+
+#error-mensage{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
