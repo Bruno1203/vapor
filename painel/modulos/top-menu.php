@@ -1,7 +1,5 @@
 <?php require('./modulos/autenticacao.php'); require('./modulos/conexao.php');?>
 
-<script src="./js/jquery.js"></script>
-<script src="./js/scripts.js"></script>
 <header id="top">
     <div id="title">
         <p>Vapor - Admin Center</p>
