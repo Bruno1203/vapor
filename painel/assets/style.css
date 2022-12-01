@@ -375,10 +375,10 @@
 
 .error {
     display: flex;
-    width: 48%;
+    width: 100%;
     height: 30px;
     align-items: center;
-    margin: 10px;
+    margin: 10px 0;
     background-color: #FF6961;
     color: #581d22;
     border-radius: 5px;

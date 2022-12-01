@@ -17,7 +17,7 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body>
+    <body onload="removeErrormessage()">
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
@@ -28,13 +28,15 @@
                 ?>
                 <div class="forms">
                     <form action="atualizar-categoria.php" method="POST">
-                        <label for="categoria">Categoria</label>
-                        <input value="<?=$categoria['nome']?>" type="text" name="categoria">
-                        <input value="<?=$id?>" type="hidden" name="id">
-                        <?php if($error_categoria != null){?>
-                        <div class="error"><?=$error_categoria?></div>
-                        <?php } ?>
-                        <button>Atualizar</button>
+                        <div class="info">    
+                            <label for="categoria">Categoria</label>
+                            <input value="<?=$categoria['nome']?>" type="text" name="categoria" class="input_info">
+                            <input value="<?=$id?>" type="hidden" name="id">
+                            <?php if($error_categoria != null){?>
+                            <div class="error"><?=$error_categoria?></div>
+                            <?php } ?>
+                            <button>Atualizar</button>
+                        </div>
                     </form>
                 </div>
             </div>

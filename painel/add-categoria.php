@@ -16,7 +16,7 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body>
+    <body onload="removeErrormessage()">
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
@@ -25,9 +25,9 @@
                     <form action="cadastro-categoria.php" method="POST">
                         <div class="info">
                             <label for="nova_categoria">categoria</label>
-                            <input type="text" name="nova_categoria">
+                            <input type="text" name="nova_categoria" class="input_info">
                             <?php if($error_categoria != null){?>
-                            <div id="erro-categoria"><?=$error_categoria?></div>
+                            <div class="error"><?=$error_categoria?></div>
                             <?php } ?>
                             <button>Salvar</button>
                         </div>

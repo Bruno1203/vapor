@@ -16,7 +16,7 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body>
+    <body onload="removeErrormessage()">
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
@@ -27,7 +27,7 @@
                             <label for="nova_plataforma">Plataforma</label>
                             <input type="text" name="nova_plataforma">
                             <?php if($error_plataforma != null){?>
-                            <div id="erro-plataforma"><?=$error_plataforma?></div>
+                            <div class="error"><?=$error_plataforma?></div>
                             <?php } ?>
                             <button>Salvar</button>
                         </div>

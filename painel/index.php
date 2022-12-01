@@ -15,13 +15,13 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body>
+    <body onload="removeLoginerror()">
         <div id="cont-login">
             <form action="login.php" id=login_screen method="post">
                 <img src="public/icons/login.png" alt="login_image" id="img_login">
                 <div class="campo_login">
                     <img src="public/icons/email.png" alt="email" class="img_login">
-                    <input type="email" placeholder="E-mail" name="email_login" class="input_login" required>
+                    <input type="email" placeholder="E-mail" name="email_login" id="email_login" class="input_login" required>
                 </div>
                 <div class="campo_login">
                     <img src="public/icons/lock.png" alt="lock" class="img_login">
