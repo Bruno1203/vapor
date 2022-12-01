@@ -29,7 +29,6 @@ function removeLoginerror(){
 }
 
 function initClock(){
-    setInterval(function(){
         let clock = document.getElementById("clock")
         let dateTime = new Date()
         let month = dateTime.getMonth()
@@ -56,5 +55,7 @@ function initClock(){
         }
 
         clock.innerHTML = day + "/" + month + "/" + year + " - " + hour + ":" + minutes + ":" + seconds
-    }, 1000)
+        setInterval(function(){
+            initClock()
+        }, 1000)
 }
