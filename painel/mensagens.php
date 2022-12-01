@@ -41,7 +41,7 @@
                         <?php } ?>
                     </table> 
                     <?php if($mensagens->num_rows == 0){ ?>
-                        <div id="error-mensage">Não há mensagens a serem exibidas!</div>
+                        <div id="mensage-error">Não há mensagens a serem exibidas!</div>
                     <?php } ?> 
                 </div>
             </div>

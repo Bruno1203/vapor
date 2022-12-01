@@ -17,7 +17,7 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body onload="removeErrormessage()">
+    <body onload="bodyLoad">
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
@@ -30,10 +30,10 @@
                     <form action="atualizar-idioma.php" method="POST">
                         <div class="info">
                             <label for="novo_idioma">Idioma</label>
-                            <input value="<?=$idioma['nome']?>" type="text" name="idioma" class="input_info">
+                            <input value="<?=$idioma['nome']?>" type="text" name="idioma" id="input_prin">
                             <input value="<?=$id?>" type="hidden" name="id">
                             <?php if($error_idioma != null){?>
-                            <div class="error"><?=$error_idioma?></div>
+                            <div class="error" id="error"><?=$error_idioma?></div>
                             <?php } ?>
                             <button>Atualizar</button>
                         </div>

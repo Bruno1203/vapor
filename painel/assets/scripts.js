@@ -1,3 +1,9 @@
+function bodyLoad(){
+    removeErrormessage()
+    removeLoginerror()
+    initClock()
+}
+
 function excluirJogo(idJogo) {
     let excluirJogo = confirm("Realmente desejaria excluir esse jogo?")
 
@@ -7,12 +13,12 @@ function excluirJogo(idJogo) {
 }
 
 function removeErrormessage(){
-    let errorMessage = document.getElementsByClassName("error")
-    let inputInfo = document.getElementsByClassName("input_info")
-    inputInfo[0].focus()
+    let errorMessage = document.getElementById("error")
+    let inputPrin = document.getElementById("input_prin")
+    inputPrin.focus()
     if(errorMessage != null){
         setTimeout(function(){
-            errorMessage[0].remove()
+            errorMessage.remove()
         }, 4000)
     }
 }
@@ -42,19 +48,15 @@ function initClock(){
         if(hour < 10){
             hour = "0" + hour
         }
-    
         if(minutes < 10){
             minutes = "0" + minutes
         }
-    
         if(seconds < 10){
             seconds = "0" + seconds
         }
-
         if(month < 10){
             month = "0" + month
         }
-    
         if(day < 10){
             day = "0" + day
         }

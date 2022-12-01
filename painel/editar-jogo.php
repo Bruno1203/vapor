@@ -13,9 +13,10 @@
         <link rel="stylesheet" href="assets/global.css">
         <link rel="stylesheet" href="assets/normalize.css">
         <link rel="stylesheet" href="assets/style.css">
+        <script src="./assets/scripts.js"></script>
         <title>Vapor - <?=$titulo_pagina?></title>
     </head>
-    <body onload="removeErrormessage()">
+    <body onload="bodyLoad">
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
@@ -30,7 +31,7 @@
                     <form action="atualizar-jogo.php" method="POST">
                         <div class="info">
                             <label for="name">Nome</label>
-                            <input type="text" name="name" value="<?=$jogo['nome']?>" class="input_info">
+                            <input type="text" name="name" value="<?=$jogo['nome']?>" id="input_prin">
                         </div>
                         <div class="info">
                             <label for="price">Valor</label>
@@ -65,7 +66,7 @@
                                 <?php }?>
                             </select>
                             <?php if($error_jogo != null){?>
-                                <div class="error"><?=$error_jogo?></div>
+                                <div class="error" id="error"><?=$error_jogo?></div>
                             <?php } ?>
                             <button type="submit">Salvar</button>
                         </div>  
