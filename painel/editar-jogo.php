@@ -27,7 +27,7 @@
                 $jogo = mysqli_fetch_assoc(mysqli_query($conn, $consultar_jogo));
                 ?>
                 <div class="forms">
-                    <form action="cadastro-jogo.php" method="POST">
+                    <form action="atualizar-jogo.php" method="POST">
                         <div class="info">
                             <label for="name">Nome</label>
                             <input type="text" name="name" value="<?=$jogo['nome']?>" class="input_info">

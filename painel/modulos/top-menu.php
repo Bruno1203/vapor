@@ -4,6 +4,7 @@
     <div id="title">
         <p>Vapor - Admin Center</p>
     </div> 
+    <div id="clock"></div>
     <div id="user">
         <div class="user-assets">
             <img src="./public/icons/bell-icon.png" alt="notification icon">
@@ -17,5 +18,5 @@
         <a href="logout.php" id="logout">Logout</a>
     </div>
 </header>
-
+<script>initClock()</script>
 
