@@ -1,9 +1,3 @@
-function bodyLoad(){
-    removeErrormessage()
-    removeLoginerror()
-    initClock()
-}
-
 function excluirJogo(idJogo) {
     let excluirJogo = confirm("Realmente desejaria excluir esse jogo?")
 

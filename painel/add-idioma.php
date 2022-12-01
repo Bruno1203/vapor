@@ -18,7 +18,7 @@ $error_idioma = $_GET['error_idioma'] ?? null;
     <title>Vapor - <?= $titulo_pagina ?></title>
 </head>
 
-<body onload="bodyLoad">
+<body onload="removeErrormessage()">
     <div id="cont-dashboard">
         <?php require('./modulos/side-menu.php') ?>
         <div id="sub-dashboard">
@@ -28,10 +28,10 @@ $error_idioma = $_GET['error_idioma'] ?? null;
                     <div class="info">
                         <label for="novo_idioma">Idioma</label>
                         <input type="text" name="novo_idioma">
+                        <button>Salvar</button>
                         <?php if ($error_idioma != null) { ?>
                             <div class="error" id="error"><?= $error_idioma ?></div>
                         <?php } ?>
-                        <button>Salvar</button>
                     </div>
                 </form>
             </div>

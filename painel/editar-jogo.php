@@ -16,7 +16,7 @@
         <script src="./assets/scripts.js"></script>
         <title>Vapor - <?=$titulo_pagina?></title>
     </head>
-    <body onload="bodyLoad">
+    <body onload="removeErrormessage()">
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
@@ -29,6 +29,7 @@
                 ?>
                 <div class="forms">
                     <form action="atualizar-jogo.php" method="POST">
+                        <input type="hidden" name="id_jogo" value="<?=$id_jogo?>">
                         <div class="info">
                             <label for="name">Nome</label>
                             <input type="text" name="name" value="<?=$jogo['nome']?>" id="input_prin">
@@ -65,10 +66,10 @@
                                     <?php }?>
                                 <?php }?>
                             </select>
+                            <button type="submit">Atualizar</button>
                             <?php if($error_jogo != null){?>
                                 <div class="error" id="error"><?=$error_jogo?></div>
                             <?php } ?>
-                            <button type="submit">Salvar</button>
                         </div>  
                         <div class="info">
                             <label for="description">Descrição</label>

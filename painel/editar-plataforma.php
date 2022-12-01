@@ -17,7 +17,7 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body onload="bodyLoad">
+    <body onload="removeErrormessage()">
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
@@ -32,10 +32,10 @@
                             <label for="plataforma">Plataforma</label>
                             <input value="<?=$plataforma['nome']?>" type="text" name="plataforma" id="input_prin">
                             <input value="<?=$id?>" type="hidden" name="id">
-                            <?php if($error_plataforma != null){?>
-                            <div class="error" id="error"><?=$error_plataforma?></div>
-                            <?php } ?>
                             <button>Atualizar</button>
+                            <?php if($error_plataforma != null){?>
+                                <div class="error" id="error"><?=$error_plataforma?></div>
+                            <?php } ?>
                         </div>
                     </form>
                 </div>

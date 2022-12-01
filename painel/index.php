@@ -15,7 +15,7 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body onload="bodyLoad">
+    <body onload="removeLoginerror()">
         <div id="cont-login">
             <form action="login.php" id=login_screen method="post">
                 <img src="public/icons/login.png" alt="login_image" id="img_login">

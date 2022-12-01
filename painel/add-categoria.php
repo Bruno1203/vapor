@@ -16,7 +16,7 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body onload="bodyLoad">
+    <body onload="removeErrormessage()">
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
@@ -26,10 +26,10 @@
                         <div class="info">
                             <label for="nova_categoria">categoria</label>
                             <input type="text" name="nova_categoria" id="input_prin">
-                            <?php if($error_categoria != null){?>
-                            <div class="error" id="error"><?=$error_categoria?></div>
-                            <?php } ?>
                             <button>Salvar</button>
+                            <?php if($error_categoria != null){?>
+                                <div class="error" id="error"><?=$error_categoria?></div>
+                            <?php } ?>
                         </div>
                     </form>
                 </div>

@@ -16,7 +16,7 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body onload="bodyLoad">
+    <body onload="removeErrormessage()">
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
@@ -24,9 +24,6 @@
                 $id_categoria = "SELECT * FROM categoria";
                 $query_categoria = mysqli_query($conn, $id_categoria);
                 ?>
-                <?php if($error != null){?>
-                    <div class="error" id="error"><?=$error?></div>
-                <?php } ?>
                 <div class="forms">
                     <form action="cadastro-jogo.php" method="POST">
                         <div class="info">
@@ -62,6 +59,9 @@
                                 <?php }?>
                             </select>
                             <button type="submit">Salvar</button>
+                            <?php if($error != null){?>
+                                <div class="error" id="error"><?=$error?></div>
+                            <?php } ?>
                         </div>  
                         <div class="info">
                             <label for="description">Descrição</label>
