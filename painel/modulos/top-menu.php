@@ -18,5 +18,8 @@
         <a href="logout.php" id="logout">Logout</a>
     </div>
 </header>
-<script>initClock()</script>
+<script>
+    initClock()
+    setInterval(initClock, 1000)
+</script>
 
