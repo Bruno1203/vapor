@@ -18,7 +18,7 @@ $error_idioma = $_GET['error_idioma'] ?? null;
     <title>Vapor - <?= $titulo_pagina ?></title>
 </head>
 
-<body onload="removeErrormessage()">
+<body>
     <div id="cont-dashboard">
         <?php require('./modulos/side-menu.php') ?>
         <div id="sub-dashboard">

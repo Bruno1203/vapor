@@ -16,7 +16,7 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body onload="removeErrormessage()">
+    <body>
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
@@ -28,7 +28,7 @@
                     <form action="cadastro-jogo.php" method="POST">
                         <div class="info">
                             <label for="name">Nome</label>
-                            <input type="text" name="name" id="input_prin">
+                            <input type="text" name="name" id="input_prin" onfocus="removeElementoPorId('error')">
                         </div>
                         <div class="info">
                             <label for="price">Valor</label>
