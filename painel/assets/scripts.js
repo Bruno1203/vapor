@@ -15,7 +15,7 @@ function removeElementoPorId(idElemento) {
 }
 
 
-function initClock() {
+function updateClock() {
     let clock = document.getElementById("clock")
     let dateTime = new Date()
     let month = dateTime.getMonth()
@@ -44,3 +44,7 @@ function initClock() {
     clock.innerHTML = day + "/" + month + "/" + year + " - " + hour + ":" + minutes + ":" + seconds
 }
 
+function initClock() {
+    updateClock()
+    setInterval(updateClock, 1000)
+}
