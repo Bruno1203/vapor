@@ -15,15 +15,15 @@ function removeElementoPorId(idElemento) {
 }
 
 
-function updateClock() {
-    let clock = document.getElementById("clock")
+function initClock() {
     let dateTime = new Date()
-    let month = dateTime.getMonth()
+    let month = dateTime.getMonth() + 1
     let year = dateTime.getFullYear()
     let day = dateTime.getDate()
     let hour = dateTime.getHours()
     let minutes = dateTime.getMinutes()
     let seconds = dateTime.getSeconds()
+
 
     if (hour < 10) {
         hour = "0" + hour
@@ -41,10 +41,11 @@ function updateClock() {
         day = "0" + day
     }
 
-    clock.innerHTML = day + "/" + month + "/" + year + " - " + hour + ":" + minutes + ":" + seconds
+    return day + "/" + month + "/" + year + " - " + hour + ":" + minutes + ":" + seconds
 }
 
-function initClock() {
-    updateClock()
-    setInterval(updateClock, 1000)
+function updateClock() {
+    const clock = document.getElementById("clock")
+    clock.innerHTML = initClock()
+    setInterval(function(){clock.innerHTML = initClock()}, 1000)
 }
