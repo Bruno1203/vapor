@@ -49,3 +49,20 @@ function updateClock() {
     clock.innerHTML = initClock()
     setInterval(function(){clock.innerHTML = initClock()}, 1000)
 }
+
+function fetchMessageNumber() {
+    const messageNumberDisplay = document.getElementById("message-number")
+
+    fetch('ajax/message-number.php').then(function(resposta) {
+        return resposta.json()
+    }).then(function(resposta) {
+        const quantidade_mensagens = resposta.quantidade_mensagens
+        messageNumberDisplay.innerHTML = quantidade_mensagens
+    })
+}
+
+function updateMessageNumber() {
+    fetchMessageNumber()
+    setInterval(fetchMessageNumber, 1000)
+}
+
