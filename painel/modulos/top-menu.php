@@ -20,6 +20,7 @@
 </header>
 <script>
     updateClock()
-    updateMessageNumber()    
+    updateMessageNumber()
+    updateColorChange()   
 </script>
 

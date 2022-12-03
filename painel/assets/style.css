@@ -42,6 +42,7 @@
     margin: 0 5px;
     text-decoration: none;
     transition: 200ms all;  
+    color: #868A92;
 }
 
 #top #user #logout:hover{   
@@ -83,7 +84,6 @@
 #top #title{
     height: 50px;
     padding: 0 10px;
-    color: #868A92;
     font-weight: bold;
 }
 /* END TOP MENU */

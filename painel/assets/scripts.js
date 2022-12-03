@@ -66,3 +66,30 @@ function updateMessageNumber() {
     setInterval(fetchMessageNumber, 1000)
 }
 
+function numberRandom(min, max){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+function colorChange(){
+    let colorNumber = numberRandom(1, 4)
+    let displayColorChange = document.getElementById('top')
+
+    if (colorNumber == 1){
+        displayColorChange.style.color = 'red'
+    }else{
+        if (colorNumber == 2){
+            displayColorChange.style.color = 'blue'
+        }else{
+            if (colorNumber == 3){
+                displayColorChange.style.color = 'green'
+            }
+        }
+    }
+}
+
+function updateColorChange(){
+    colorChange()
+    setInterval(colorChange, 1000)
+}
