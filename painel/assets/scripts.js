@@ -76,44 +76,25 @@ function numberRandom(min, max){
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-function colorChange(){
-    let colorNumber = numberRandom(1, 4)
-    let displayColorChange = document.getElementById('top')
-
-    if (colorNumber == 1){
-        displayColorChange.style.color = 'red'
-    }else{
-        if (colorNumber == 2){
-            displayColorChange.style.color = 'blue'
-        }else{
-            if (colorNumber == 3){
-                displayColorChange.style.color = 'green'
-            }
-        }
-    }
-}
-
-function updateColorChange(){
-    colorChange()
-    setInterval(colorChange, 1000)
-}
-
-
 function messageDados(){
-    const messagesTable = document.getElementById("dados-message")
-    const reloadingMessages = messagesTable.querySelector("#header-messages")
+    const messagesTable = document.getElementById("dados-message").querySelector("tbody")
+    const updateTableMessages = messagesTable.querySelector("#header-messages").outerHTML
     fetch('ajax/search-message.php').then(function(result) {
          return result.json()
      }).then(function(result){
-        messagesTable.innerHTML = reloadingMessages.innerHTML
+        messagesTable.innerHTML = updateTableMessages
         for(let i = 0; i <= result.length - 1; i++){
-            messagesTable.innerHTML = messagesTable.innerHTML + "<tr> <td>" + result[i]['nome'] + "</td>" + "<td class=actions>" + result[i]['assunto'] + "</td>" + "<td class='actions'><a href=visualizar-mensagens.php?id=" + result[i]['id'] + ">Visualizar</a></td>" + "</td>" + "<td class=actions><a href=arquivar-mensagens.php?id=" + result[i]['id'] + ">Arquivar</a></td></tr>"
+            if(result[i]['visualizado'] == 0){
+                messagesTable.innerHTML = messagesTable.innerHTML + "<tr> <td class=nao_visualizado>" + result[i]['nome'] + "</td>" + "<td class='actions nao_visualizado'>" + result[i]['assunto'] + "</td>" + "<td class='actions nao_visualizado'><a href=visualizar-mensagens.php?id=" + result[i]['id'] + ">Visualizar</a></td>" + "</td>" + "<td class='actions nao_visualizado'><a href=arquivar-mensagem.php?id=" + result[i]['id'] + ">Arquivar</a></td></tr>"
+            }else{
+                messagesTable.innerHTML = messagesTable.innerHTML + "<tr> <td>" + result[i]['nome'] + "</td>" + "<td class=actions>" + result[i]['assunto'] + "</td>" + "<td class=actions><a href=visualizar-mensagens.php?id=" + result[i]['id'] + ">Visualizar</a></td>" + "</td>" + "<td class=actions><a href=arquivar-mensagem.php?id=" + result[i]['id'] + ">Arquivar</a></td></tr>"
+            }
+            console.log("sucesso")
         }
      })
 }
 
-
 function updateMessagesDados(){ 
     messageDados()
-    setInterval(messageDados, 1000)
+    setInterval(messageDados, 10000)
 }

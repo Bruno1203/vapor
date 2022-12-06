@@ -28,30 +28,6 @@
                             <th class="actions">Visualizar</th>
                             <th class="actions">Arquivar</th>
                         </tr>
-                        <tr>
-                            <th>Mensagens Recebidas</th>
-                            <th class="actions">Assunto</th>
-                            <th class="actions">Visualizar</th>
-                            <th class="actions">Arquivar</th>
-                        </tr>
-                        <tr>
-                            <th>Mensagens Recebidas</th>
-                            <th class="actions">Assunto</th>
-                            <th class="actions">Visualizar</th>
-                            <th class="actions">Arquivar</th>
-                        </tr>
-                        <tr>
-                            <th>Mensagens Recebidas</th>
-                            <th class="actions">Assunto</th>
-                            <th class="actions">Visualizar</th>
-                            <th class="actions">Arquivar</th>
-                        </tr>
-                        <tr>
-                            <th>Mensagens Recebidas</th>
-                            <th class="actions">Assunto</th>
-                            <th class="actions">Visualizar</th>
-                            <th class="actions">Arquivar</th>
-                        </tr>
                     </table>  
                 </div>
             </div>
