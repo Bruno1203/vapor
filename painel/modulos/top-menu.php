@@ -10,7 +10,7 @@
             <img src="./public/icons/bell-icon.png" alt="notification icon">
         </div>
         <div class="user-assets">
-            <a href="mensagens.php"><img src="./public/icons/message-icon.png" alt="message icon"><span id="message-number">-</span></a>
+            <a href="mensagens.php"><img src="./public/icons/message-icon.png" alt="message icon"><span id="message-number"></span></a>
         </div>
         <img src="./public/icons/login.png" alt="user_photo" id="login-user">
         <p>Olá, <?=explode("de", $administrador['nome'])[0]?></p>
@@ -21,6 +21,6 @@
 <script>
     updateClock()
     updateMessageNumber()
-    updateColorChange()   
+    updateColorChange()
 </script>
 

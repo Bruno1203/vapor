@@ -15,34 +15,44 @@
         <script src=./assets/scripts.js></script>     
         <title>Vapor - <?=$titulo_pagina?></title>     
     </head>
-    <body>
+    <body onload="updateMessagesDados()">
         <div id="cont-dashboard">
             <?php require('./modulos/side-menu.php')?>
             <div id="sub-dashboard">
-                <?php require('./modulos/top-menu.php');
-                    $query_mensagens = "SELECT id, nome, assunto, visualizado FROM mensagem WHERE arquivado = 0";
-                    $mensagens = mysqli_query($conn, $query_mensagens);          
-                ?>
+                <?php require('./modulos/top-menu.php')?>
                 <div class="listas espacamento">
-                    <table>
+                    <table id="dados-message">
+                        <tr id="header-messages">
+                            <th>Mensagens Recebidas</th>
+                            <th class="actions">Assunto</th>
+                            <th class="actions">Visualizar</th>
+                            <th class="actions">Arquivar</th>
+                        </tr>
                         <tr>
                             <th>Mensagens Recebidas</th>
                             <th class="actions">Assunto</th>
                             <th class="actions">Visualizar</th>
                             <th class="actions">Arquivar</th>
                         </tr>
-                        <?php while($mensagem = mysqli_fetch_array($mensagens)){?>
                         <tr>
-                            <td <?php if($mensagem['visualizado'] == 0){?> class="nao_visualizado" <?php } ?>><?=$mensagem['nome']?></td>
-                            <td class="actions <?php if($mensagem['visualizado'] == 0){?> nao_visualizado <?php } ?>"><?=$mensagem['assunto']?></td>
-                            <td class="actions <?php if($mensagem['visualizado'] == 0){?> nao_visualizado <?php } ?>"><a href="visualizar-mensagens.php?id=<?=$mensagem['id']?>">Visualizar</a></td>
-                            <td class="actions <?php if($mensagem['visualizado'] == 0){?> nao_visualizado <?php } ?>"><a href="arquivar-mensagem.php?id=<?=$mensagem['id']?>">Arquivar</a></td>
+                            <th>Mensagens Recebidas</th>
+                            <th class="actions">Assunto</th>
+                            <th class="actions">Visualizar</th>
+                            <th class="actions">Arquivar</th>
                         </tr>
-                        <?php } ?>
-                    </table> 
-                    <?php if($mensagens->num_rows == 0){ ?>
-                        <div id="mensage-error">Não há mensagens a serem exibidas!</div>
-                    <?php } ?> 
+                        <tr>
+                            <th>Mensagens Recebidas</th>
+                            <th class="actions">Assunto</th>
+                            <th class="actions">Visualizar</th>
+                            <th class="actions">Arquivar</th>
+                        </tr>
+                        <tr>
+                            <th>Mensagens Recebidas</th>
+                            <th class="actions">Assunto</th>
+                            <th class="actions">Visualizar</th>
+                            <th class="actions">Arquivar</th>
+                        </tr>
+                    </table>  
                 </div>
             </div>
         </div>

@@ -52,12 +52,16 @@ function updateClock() {
 
 function fetchMessageNumber() {
     const messageNumberDisplay = document.getElementById("message-number")
-
     fetch('ajax/message-number.php').then(function(resposta) {
         return resposta.json()
     }).then(function(resposta) {
         const quantidade_mensagens = resposta.quantidade_mensagens
-        messageNumberDisplay.innerHTML = quantidade_mensagens
+        if(quantidade_mensagens == 0){
+            messageNumberDisplay.style.display = 'none';
+        }else{
+            messageNumberDisplay.style.display = "inline"
+            messageNumberDisplay.innerHTML = quantidade_mensagens
+        }
     })
 }
 
@@ -92,4 +96,24 @@ function colorChange(){
 function updateColorChange(){
     colorChange()
     setInterval(colorChange, 1000)
+}
+
+
+function messageDados(){
+    const messagesTable = document.getElementById("dados-message")
+    const reloadingMessages = messagesTable.querySelector("#header-messages")
+    fetch('ajax/search-message.php').then(function(result) {
+         return result.json()
+     }).then(function(result){
+        messagesTable.innerHTML = reloadingMessages.innerHTML
+        for(let i = 0; i <= result.length - 1; i++){
+            messagesTable.innerHTML = messagesTable.innerHTML + "<tr> <td>" + result[i]['nome'] + "</td>" + "<td class=actions>" + result[i]['assunto'] + "</td>" + "<td class='actions'><a href=visualizar-mensagens.php?id=" + result[i]['id'] + ">Visualizar</a></td>" + "</td>" + "<td class=actions><a href=arquivar-mensagens.php?id=" + result[i]['id'] + ">Arquivar</a></td></tr>"
+        }
+     })
+}
+
+
+function updateMessagesDados(){ 
+    messageDados()
+    setInterval(messageDados, 1000)
 }
