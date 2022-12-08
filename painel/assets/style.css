@@ -20,14 +20,23 @@
 
 #top #user{
     height: 50px;
+    width: 33%;
     display: flex;
     flex-direction: row;
-    padding: 0 10px;
+    padding: 0 50px;
     align-items: center;
     font-weight: bold;
+    justify-content: flex-end;
 }
 
-#top #user #login-user{
+#top #user #user-perfil{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+#top #user #user-img{
     width: 52px;
     height: auto;
     padding: 5px;
@@ -51,14 +60,16 @@
 
 #top #user .user-assets{
     position: relative;
-    width: 50px;
+    width: 20%;
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: row;
 }
 
-#top #user .user-assets #new_message{
+#top #user .user-assets #message-number{
+    display: none;
     text-align: center;
     width: 15px;
     height: 15px;
@@ -82,8 +93,9 @@
 }
 
 #top #title{
+    width: 33%;
     height: 50px;
-    padding: 0 10px;
+    padding: 0 50px;
     font-weight: bold;
 }
 /* END TOP MENU */
@@ -130,6 +142,14 @@
 
 #side-menu .item a:hover{
     color: #3598DC;
+}
+
+#top #clock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    height: 50px;
 }
 
 /* SCREEN LOGIN REGION */

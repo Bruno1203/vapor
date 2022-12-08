@@ -24,7 +24,6 @@ function initClock() {
     let minutes = dateTime.getMinutes()
     let seconds = dateTime.getSeconds()
 
-
     if (hour < 10) {
         hour = "0" + hour
     }
@@ -56,10 +55,8 @@ function fetchMessageNumber() {
         return resposta.json()
     }).then(function(resposta) {
         const quantidade_mensagens = resposta.quantidade_mensagens
-        if(quantidade_mensagens == 0){
-            messageNumberDisplay.style.display = 'none';
-        }else{
-            messageNumberDisplay.style.display = "inline"
+        if(quantidade_mensagens != 0){
+            messageNumberDisplay.style.display = 'block'
             messageNumberDisplay.innerHTML = quantidade_mensagens
         }
     })
@@ -89,7 +86,6 @@ function messageDados(){
             }else{
                 messagesTable.innerHTML = messagesTable.innerHTML + "<tr> <td>" + result[i]['nome'] + "</td>" + "<td class=actions>" + result[i]['assunto'] + "</td>" + "<td class=actions><a href=visualizar-mensagens.php?id=" + result[i]['id'] + ">Visualizar</a></td>" + "</td>" + "<td class=actions><a href=arquivar-mensagem.php?id=" + result[i]['id'] + ">Arquivar</a></td></tr>"
             }
-            console.log("sucesso")
         }
      })
 }
