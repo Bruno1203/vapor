@@ -45,5 +45,4 @@ Em breve implementação de funcionalidade preview de mensagens
 # Autor
 Bruno Henrique Carrara de Almeida
 ## Contato
-E-mail: brunohenrique122003@gmail.com 
-LinkedIn: https://www.linkedin.com/in/bruno-carrara-5628a41a2/
+E-mail: brunohenrique122003@gmail.com | LinkedIn: https://www.linkedin.com/in/bruno-carrara-5628a41a2/
