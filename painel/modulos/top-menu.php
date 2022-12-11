@@ -8,10 +8,10 @@
     <div id="user">
         <div class="user-assets">
             <img src="./public/icons/bell-icon.png" alt="notification icon">
-            <a href="mensagens.php"><img src="./public/icons/message-icon.png" alt="message icon">
-                <span id="message-number"></span>
-            </a>
-
+            <img src="./public/icons/message-icon.png" alt="message icon" id="message-icon">
+            <span id="message-number"></span>
+            <div id="message-preview">
+            </div>
         </div>
         <div id="user-perfil">
             <img src="./public/icons/login.png" alt="user_photo" id="user-img">
@@ -24,5 +24,6 @@
 <script>
     updateClock()
     updateMessageNumber()
+    messagePreviewShow()
 </script>
 

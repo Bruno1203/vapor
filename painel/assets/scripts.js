@@ -94,3 +94,21 @@ function updateMessagesDados(){
     messageDados()
     setInterval(messageDados, 10000)
 }
+
+function messagePreviewShow(){
+    const messageIcon = document.getElementById("message-icon")
+    const displayPreviewMessage = document.getElementById("message-preview")
+    displayPreviewMessage.classList.add('hidden')
+    messageIcon.addEventListener("click", () =>{
+        displayPreviewMessage.classList.toggle('hidden')
+        fetch('ajax/search-message.php').then(function(result) {
+            return result.json()
+        }).then(function(result){
+            displayPreviewMessage.innerHTML = ""
+            result.forEach(function(result, index){
+                displayPreviewMessage.innerHTML = displayPreviewMessage.innerHTML + "<div id=message-info-preview>" + "<span>" + result['nome'] + "</span>" + "<span>" + result['assunto'] + "</span>" + "<span>" + result['mensagem'] + "</span>" + "</div>"
+            });
+            displayPreviewMessage.innerHTML = displayPreviewMessage.innerHTML + "<a  id=view-all href=./mensagens.php>Visualizar Todas</a>"
+        })
+    })
+}
