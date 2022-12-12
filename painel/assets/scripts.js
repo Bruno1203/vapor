@@ -81,10 +81,12 @@ function messageDados(){
      }).then(function(result){
         messagesTable.innerHTML = updateTableMessages
         for(let i = 0; i <= result.length - 1; i++){
+            const dataEnvio = new Date(result[i]['data_envio'])
+            let date = dataEnvio.getDate() + "/"  + dataEnvio.getMonth() + "/" + dataEnvio.getFullYear()
             if(result[i]['visualizado'] == 0){
-                messagesTable.innerHTML = messagesTable.innerHTML + "<tr> <td class=nao_visualizado>" + result[i]['nome'] + "</td>" + "<td class='actions nao_visualizado'>" + result[i]['assunto'] + "</td>" + "<td class='actions nao_visualizado'><a href=visualizar-mensagens.php?id=" + result[i]['id'] + ">Visualizar</a></td>" + "</td>" + "<td class='actions nao_visualizado'><a href=arquivar-mensagem.php?id=" + result[i]['id'] + ">Arquivar</a></td></tr>"
+                messagesTable.innerHTML = messagesTable.innerHTML + "<tr> <td class=nao_visualizado>" + result[i]['nome'] + "</td>" + "<td class='actions nao_visualizado'>" + result[i]['assunto'] + "</td>" + "<td class='actions nao_visualizado'>" + date + "</td>" + "<td class='actions nao_visualizado'><a href=visualizar-mensagens.php?id=" + result[i]['id'] + ">Visualizar</a></td>" + "</td>" + "<td class='actions nao_visualizado'><a href=arquivar-mensagem.php?id=" + result[i]['id'] + ">Arquivar</a></td></tr>"
             }else{
-                messagesTable.innerHTML = messagesTable.innerHTML + "<tr> <td>" + result[i]['nome'] + "</td>" + "<td class=actions>" + result[i]['assunto'] + "</td>" + "<td class=actions><a href=visualizar-mensagens.php?id=" + result[i]['id'] + ">Visualizar</a></td>" + "</td>" + "<td class=actions><a href=arquivar-mensagem.php?id=" + result[i]['id'] + ">Arquivar</a></td></tr>"
+                messagesTable.innerHTML = messagesTable.innerHTML + "<tr> <td>" + result[i]['nome'] + "</td>" + "<td class=actions>" + result[i]['assunto'] + "<td class=actions>" + date + "</td>"  +"</td>" + "<td class=actions><a href=visualizar-mensagens.php?id=" + result[i]['id'] + ">Visualizar</a></td>" + "</td>" + "<td class=actions><a href=arquivar-mensagem.php?id=" + result[i]['id'] + ">Arquivar</a></td></tr>"
             }
         }
      })
@@ -100,15 +102,25 @@ function messagePreviewShow(){
     const displayPreviewMessage = document.getElementById("message-preview")
     displayPreviewMessage.classList.add('hidden')
     messageIcon.addEventListener("click", () =>{
-        displayPreviewMessage.classList.toggle('hidden')
-        fetch('ajax/search-message.php').then(function(result) {
+        fetch('ajax/messages-preview.php').then(function(result) {
             return result.json()
         }).then(function(result){
-            displayPreviewMessage.innerHTML = ""
-            result.forEach(function(result, index){
-                displayPreviewMessage.innerHTML = displayPreviewMessage.innerHTML + "<div id=message-info-preview>" + "<span>" + result['nome'] + "</span>" + "<span>" + result['assunto'] + "</span>" + "<span>" + result['mensagem'] + "</span>" + "</div>"
-            });
-            displayPreviewMessage.innerHTML = displayPreviewMessage.innerHTML + "<a  id=view-all href=./mensagens.php>Visualizar Todas</a>"
+            if(document.location.pathname == "/vapor/painel/mensagens.php"){
+                window.location.assign(document.URL)
+            }else{
+                displayPreviewMessage.classList.toggle('hidden')
+                displayPreviewMessage.innerHTML = ""
+                if(result.length == 0){
+                    displayPreviewMessage.innerHTML = "Não há Novas mensagens!" + "<a  id=view-all href=./mensagens.php>Visualizar Todas</a>"
+                }else{
+                    result.forEach(function(result, index){
+                        if(index <= 4){
+                            displayPreviewMessage.innerHTML = displayPreviewMessage.innerHTML + "<div id=message-info-preview>" + "<span>" + result['nome'] + "</span>" + "<span>" + result['assunto'] + "</span>" + "<span>" + "<a href=visualizar-mensagens.php?id=" + result['id'] + ">Visualizar</a>" + "</span>" + "</div>"
+                        }
+                    });
+                    displayPreviewMessage.innerHTML = displayPreviewMessage.innerHTML + "<a  id=view-all href=./mensagens.php>Visualizar Todas</a>"
+                }
+            }
         })
     })
 }

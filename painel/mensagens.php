@@ -25,6 +25,7 @@
                         <tr id="header-messages">
                             <th>Mensagens Recebidas</th>
                             <th class="actions">Assunto</th>
+                            <th class="actions">Data Envio</th>
                             <th class="actions">Visualizar</th>
                             <th class="actions">Arquivar</th>
                         </tr>

@@ -90,10 +90,13 @@
     width: 300px;
     height: 300px;
     padding: 10px;
-    background: #000;
+    background-color: #000;
     top: 50px;
     left: 50px;
     border-radius: 5px;
+    text-align: center;
+    color: #FFF;
+    font-size: 18px;
 }
 
 
@@ -112,22 +115,39 @@
 #top #user .user-assets #message-preview #message-info-preview{
     display: flex;
     width: 95%;
-    height: 20px;
-    margin: 15px auto;
+    height: 30px;
+    margin: 10px auto;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 3px solid #3598DC;
+}
+
+#top #user .user-assets #message-preview #message-info-preview a{
+    text-decoration: none;
+    color: #fff;
+    transition: 200ms all;
+}
+
+#top #user .user-assets #message-preview #message-info-preview a:hover{
+    color: #3598DC;   
 }
 
 #top #user .user-assets #message-preview #view-all{
     position: absolute;
     bottom: 5px;
-    right: 5px;
+    right: 10px;
+    text-decoration: none;
+    color: #FFF;
+    transition: 200ms all;
+}
+
+#top #user .user-assets #message-preview #view-all:hover{
+    color: #3598DC;
 }
 
 #top #user .user-assets #message-preview #message-info-preview span{
-    display: flex;
-    width: 33%;
+    display: block;
     padding: 0 5px;
-    justify-content: center;
-    align-items: center;
 }
 
 #top #user .user-assets img{

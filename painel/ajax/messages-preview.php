@@ -1,7 +1,7 @@
 <?php
     require('../modulos/conexao.php');
 
-    $query_mensagens = "SELECT id, nome, assunto, visualizado, data_envio FROM mensagem WHERE arquivado = 0 ORDER BY data_envio DESC";
+    $query_mensagens = "SELECT id, nome, assunto, visualizado FROM mensagem WHERE arquivado = 0 AND visualizado = 0 ORDER BY data_envio DESC LIMIT 5";
     $mensagens_infos = array();
     $mensagem = mysqli_query($conn, $query_mensagens);
 
